@@ -22,11 +22,21 @@ kitalalando_szam = szamok[random.randint(0,len(szamok))]
 jatszol = True
 
 while(jatszol):
-    tipp = int(input("Tippelj egy pozitív egész számot!: "))
-
+    tipp_sz=input("Tippelj egy pozitív egész számot!: ").strip()
+    if(tipp_sz.isdecimal()):
+        tipp= int(tipp_sz)
+    else:
+        print("Egész számmal játsz!")
+        continue
+    
     while(tipp!=kitalalando_szam):
         print("Nem talált!")
-        tipp= int(input("Tippelj újra!: "))
+        tipp_sz= input("Tippelj újra!: ")
+        if(tipp_sz.isdecimal()):
+            tipp= int(tipp_sz)
+        else:
+            print("Egész számmal játsz!")
+            continue
     print("Kitaláltad!")
 
     folytat=input("Szeretnél még játszani? [I/N]")
