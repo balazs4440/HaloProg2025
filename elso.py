@@ -3,7 +3,6 @@ import random
 #Lista
 szamok = []
 
-
 #Feltötése
 while len(szamok)!=40:
     szam=random.randint(10, 99)
@@ -32,12 +31,14 @@ while(jatszol):
     
     while(tipp!=kitalalando_szam):
         if (tipp < kitalalando_szam):
-            print("Tippelj nagyobbat! :")
+            print("Tippelj nagyobbat!")
         else:
-            print("Tippelj kissebbet! :")
-        tipp_sz= input("Tippelj újra!: ")
+            print("Tippelj kissebbet!")
+        tipp_sz= input("[Kilépés X el lehetséges] \n Tippelj újra! :")
         if(tipp_sz.isdecimal()):
             tipp= int(tipp_sz)
+        elif (tipp_sz == "X"):
+            exit()
         else:
             print("Egész számmal játsz!")
             continue
