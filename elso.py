@@ -5,9 +5,10 @@ szamok = []
 
 
 #Feltötése
-for i in range(100):
+while len(szamok)!=40:
     szam=random.randint(10, 99)
-    szamok.append(szam)
+    if szam not in szamok:
+        szamok.append(szam)
 
 #ell
 #print(len(szamok),szamok)
@@ -30,7 +31,10 @@ while(jatszol):
         continue
     
     while(tipp!=kitalalando_szam):
-        print("Nem talált!")
+        if (tipp < kitalalando_szam):
+            print("Tippelj nagyobbat! :")
+        else:
+            print("Tippelj kissebbet! :")
         tipp_sz= input("Tippelj újra!: ")
         if(tipp_sz.isdecimal()):
             tipp= int(tipp_sz)
